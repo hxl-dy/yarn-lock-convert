@@ -20,7 +20,7 @@
     "index.d.ts",
     "LICENSE"
   ],
-  "author": "NumTide Ltd <info@numtide.com>",
+  "author": "Yosef Langer <yosef@doar.systems>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/numtide/yarnlock2json/issues"
