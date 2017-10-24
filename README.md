@@ -41,5 +41,4 @@ yarnconverter.toJson("/home/www/someproject").then((yarnJsonString)=>console.log
 ```
 
 ## Credits
-
-[zimbatm](https://github.com/zimbatm) - forked this project from theirs, and modified to my needs.
+[zimbatm](https://github.com/zimbatm) - forked [this project ](https://github.com/numtide/yarnlock2json) from theirs, and modified to my needs.
