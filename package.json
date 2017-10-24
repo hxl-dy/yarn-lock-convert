@@ -1,6 +1,6 @@
 {
   "name": "yarn-lock-convert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converts the yarn.lock file into JSON",
   "main": "index.js",
   "typings": "./index.d.ts",
