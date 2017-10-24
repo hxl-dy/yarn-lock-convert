@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/numtide/yarnlock2json#readme",
   "dependencies": {
-    "commander": "^2.9.0",
     "yarn": "^0.18.0"
   }
 }
