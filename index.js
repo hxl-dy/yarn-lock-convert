@@ -1,9 +1,11 @@
 'use strict';
 const path = require('path');
-const wrapper = require(path.resolve(__dirname, "./node_modules/yarn/lib/lockfile/wrapper"));
+const fullPath=path.resolve(__dirname, "./node_modules/yarn/lib/lockfile/wrapper");
+const wrapper = require(fullPath.replace(/node_modules(.*)node_modules/,"node_modules"));
 exports.toObject = function yarn2Object(dir) {
     if (!dir) {
         dir = process.cwd();
+        process.stdio
     }
     return wrapper.default.fromDirectory(dir).then((lockfile) => {
         return Promise.resolve(lockfile.cache);
