@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/yarn-lock-convert.svg)](https://www.npmjs.com/package/yarn-lock-convert)
+
+
 # yarn-lock-convert
 
 This program uses yarn's official parser to read the `yarn.lock` file and then
