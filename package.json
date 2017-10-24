@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/numtide/yarnlock2json.git"
+    "url": "git+https://github.com/vasilevich/yarn-lock-convert.git"
   },
   "keywords": [
     "yarn",
