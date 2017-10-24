@@ -13,6 +13,8 @@ declare module 'yarn-lock-convert' {
         [name: string]: IPackage;
     }
 
-    export function toObject(): Promise<IYarnLock>
+    export function toObject(dir?: string): Promise<IYarnLock>
+
+    export function toJson(dir?: string, output?: any): Promise<IYarnLock>
 
 }
