@@ -1,45 +1,42 @@
-# yarnlock2json
+# yarn-lock-convert
 
 This program uses yarn's official parser to read the `yarn.lock` file and then
-produce a JSON file. The intent is to use the result as a data source for
-nix since nix can read JSON natively. Because we're using the official parser
-it's going to be easier to keep this up2date.
+produce a promise that returns a json/object.
+
+## Install
+#### YARN
+```bash
+yarn add yarn-lock-convert
+```
+### or     
+#### NPM
+```bash
+npm install yarn-lock-convert
+```
+
 
 ## Usage
-
+### Typescript:
+```ts
+import * as yarnconverter from 'yarn-lock-convert';
+//if you want an object
+yarnconverter.toObject().then((yarnObject)=>console.log(yarnObject));
+//if you want a JSON file
+yarnconverter.toJson().then((yarnJsonString)=>console.log(yarnJsonString));
+//if you want another directory
+yarnconverter.toJson("/home/www/someproject").then((yarnJsonString)=>console.log(yarnJsonString));
 ```
-  Usage: yarnlock2json [options]
-
-  Transforms yarn.lock files to JSON
-
-  Options:
-
-    -h, --help           output usage information
-    -V, --version        output the version number
-    -d, --dir <path>     directory path where the yarn.lock file is located (default to current directory)
-    -o, --output <path>  file path to write the JSON to (default to stdout)
-    -p, --pretty         indent the output
+### Javascript:
+```js
+const yarnconverter = require("yarn-lock-convert");
+//if you want an object
+yarnconverter.toObject().then((yarnObject)=>console.log(yarnObject));
+//if you want a JSON file
+yarnconverter.toJson().then((yarnJsonString)=>console.log(yarnJsonString));
+//if you want another directory
+yarnconverter.toJson("/home/www/someproject").then((yarnJsonString)=>console.log(yarnJsonString));
 ```
 
-## TODO
+## Credits
 
-Write the nix counterpart that can take advantage of that JSON output.
-
-## Notes
-
-Unfortunately it's not possible to generate a nix file that will be compatible
-with npm2nix's output (without fetching more informations).
-
-Yarn:
-* name
-* version
-* fetch url and sha1
-* dependencies by name:version
-
-Npm2nix (on top of yarn's set):
-* is binary?
-* optionalDependencies
-* peerDependencies
-* os list
-* cpu list
-
+[zimbatm](https://github.com/zimbatm) - forked this project from theirs, and modified to my needs.
