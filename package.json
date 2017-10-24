@@ -15,6 +15,11 @@
     "yarn",
     "nix"
   ],
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
   "author": "NumTide Ltd <info@numtide.com>",
   "license": "ISC",
   "bugs": {
