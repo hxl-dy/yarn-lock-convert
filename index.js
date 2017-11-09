@@ -1,7 +1,16 @@
 'use strict';
 const path = require('path');
-const fullPath=path.resolve(__dirname, "./node_modules/yarn/lib/lockfile/wrapper");
-const wrapper = require(fullPath.replace(/node_modules(.*)node_modules/,"node_modules"));
+const wrapper = (() => {
+    const fullPath = path.resolve(__dirname, "./node_modules/yarn/lib/lockfile/wrapper");
+    const nodeModulesCount = (path) => (path.match(/node_modules/g) || []).length;
+    let tempfullPath = fullPath;
+    while (nodeModulesCount(tempfullPath) > 2) {
+        tempfullPath = tempfullPath.replace("node_modules", "tempDontTouchNodeModules");
+    }
+    return require(tempfullPath.replace(/node_modules(.*)node_modules/,"node_modules").replace(new RegExp("tempDontTouchNodeModules", 'g'), "node_modules"));
+})();
+
+
 exports.toObject = function yarn2Object(dir) {
     if (!dir) {
         dir = process.cwd();
